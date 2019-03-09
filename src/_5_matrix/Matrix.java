@@ -11,14 +11,18 @@ public class Matrix {
     public Matrix(int row, int column) {
         this.row = row;
         this.column = column;
+        this.elements = new int[row][column];
     }
 
-    public Matrix(int length){
+    public Matrix(int length) {
         this.row = length;
         this.column = length;
+        this.elements = new int[length][length];
     }
 
-    public Matrix(int[][] elements){
+    public Matrix(int[][] elements) {
+        this.row = elements.length;
+        this.column = elements[0].length;
         this.elements = elements;
     }
 
@@ -35,24 +39,64 @@ public class Matrix {
     }
 
     public boolean add(Matrix newMatrix) {
-        //TODO
+        int rowLength = elements.length;
+        int columnLength = elements[0].length;
+        if ((newMatrix.getRow() == row && newMatrix.getColumn() == column) ||
+                (newMatrix.getElements().length == rowLength && newMatrix.getElements()[0].length == columnLength)) {
+            int[][] arrarySum = new int[rowLength][columnLength];
+            for (int i = 0; i < elements.length; i++) {
+                for (int j = 0; j < elements[0].length; j++) {
+                    arrarySum[i][j] = elements[i][j] + newMatrix.getElements()[i][j];
+                }
+            }
+//            printArray(arrarySum);
+            return true;
+        }else
+            return false;
     }
 
-    public void setElement(int i, int j, int value){
-        //TODO
+    public void setElement(int i, int j, int value) {
+        if (i <= row && j <= column)
+            this.elements[i][j] = value;
     }
 
     public boolean isSquareMatrix() {
-        //TODO
+        if(this.row == this.column)
+            return true;
+        else
+            return false;
     }
 
     public void toLowerTriangular() {
-        //TODO
+        if(isSquareMatrix()){
+            for (int i = 0; i < row; i++){
+                for (int j = 0; j < column; j++){
+                    if (j > i)
+                        elements[i][j] = 0;
+                }
+            }
+        }
     }
 
     public void toUpperTriangular() {
-        //TODO
+        if(isSquareMatrix()){
+            for (int i = 0; i < row; i++){
+                for (int j = 0; j < column; j++){
+                    if (j < i)
+                        elements[i][j] = 0;
+                }
+            }
+        }
     }
+
+    /*public void printArray(int[][] arrary){
+        for (int i = 0; i < arrary.length; i++){
+            for (int j = 0; j < arrary[0].length; j++){
+                System.out.print(" "+ arrary[i][j]);
+            }
+            System.out.println();
+        }
+    }*/
 
 }
 
