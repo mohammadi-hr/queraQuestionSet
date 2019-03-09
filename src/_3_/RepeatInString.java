@@ -7,7 +7,7 @@ public class RepeatInString {
 
     public static void main(String[] args) {
         RepeatInString repeatInString = new RepeatInString();
-        repeatInString.StringInString(" sub : how many sub sub substrinng are here sub", "");
+        repeatInString.StringInString(" sub : how many sub sub substrinng are here sub", " sub");
     }
 
     public int StringInString(String one, String two) {
@@ -36,7 +36,7 @@ public class RepeatInString {
         }
     }
 
-/*////// Second Solurion
+/* ********************************* Second Solution ***************************************
 
     public int StringInString(String one, String two) {
         int numberOfOccurrence = 0;
@@ -52,9 +52,10 @@ public class RepeatInString {
         System.out.println(numberOfOccurrence);
         return numberOfOccurrence;
     }
-*///////
+********************************************************************************************/
 
-    /*////// Third Solurion
+/* *********************************** Third Solution ***************************************
+
             public int StringInString(String one, String two) {
                 int lastIndex = 0;
                 int count = 0;
@@ -75,6 +76,6 @@ public class RepeatInString {
                 System.out.println(count);
                 return count;
             }
-    *///////
+************************************************************************************************/
 
 }
