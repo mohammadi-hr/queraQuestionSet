@@ -43,10 +43,9 @@ public class Matrix {
         int columnLength = elements[0].length;
         if ((newMatrix.getRow() == row && newMatrix.getColumn() == column) ||
                 (newMatrix.getElements().length == rowLength && newMatrix.getElements()[0].length == columnLength)) {
-            int[][] arrarySum = new int[rowLength][columnLength];
             for (int i = 0; i < elements.length; i++) {
                 for (int j = 0; j < elements[0].length; j++) {
-                    arrarySum[i][j] = elements[i][j] + newMatrix.getElements()[i][j];
+                    elements[i][j] += newMatrix.getElements()[i][j];
                 }
             }
 //            printArray(arrarySum);
