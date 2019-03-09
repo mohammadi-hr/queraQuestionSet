@@ -1,4 +1,4 @@
-package _4_Banking;
+package _4_banking;
 
 /**
  * Created by  Mohammadi-H on 3/9/2019.

@@ -48,7 +48,6 @@ public class Matrix {
                     elements[i][j] += newMatrix.getElements()[i][j];
                 }
             }
-//            printArray(arrarySum);
             return true;
         }else
             return false;
@@ -88,14 +87,14 @@ public class Matrix {
         }
     }
 
-    /*public void printArray(int[][] arrary){
+    public void printArray(int[][] arrary){
         for (int i = 0; i < arrary.length; i++){
             for (int j = 0; j < arrary[0].length; j++){
                 System.out.print(" "+ arrary[i][j]);
             }
             System.out.println();
         }
-    }*/
+    }
 
 }
 
