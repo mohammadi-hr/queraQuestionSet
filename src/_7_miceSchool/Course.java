@@ -1,5 +1,8 @@
 package _7_miceSchool;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Mohammadi-HR on 3/9/2019.
  */
@@ -8,31 +11,29 @@ package _7_miceSchool;
 public class Course {
 
     private String name = new String();
-    private Student[] students = new Student[10];
-    private static int seatNumber = 0;
+    private List<Student> students = new ArrayList<Student>();
 
     public boolean register(Student s) {
-        if (seatNumber != 10) {
-            this.students[seatNumber] = s;
-            seatNumber ++;
+        if (students.size() < 10) {
+            students.add(s);
             return true;
         } else
             return false;
     }
 
     public int getNumOfStudents() {
-        return seatNumber ;
+        return students.size() ;
     }
 
     public Student[] getStudents() {
-        Student[] registeredStudents = new Student[seatNumber];
-        for (int i = 0; i < seatNumber; i++) {
-            registeredStudents[i] = students[i];
+        Student[] registeredStudents = new Student[students.size()];
+        for (int i = 0; i < students.size(); i++) {
+            registeredStudents[i] = students.get(i);
         }
         return registeredStudents;
     }
 
-   /* public void printRegisteredStudents(){
+    /*public void printRegisteredStudents(){
         Student[] students = getStudents();
         for (int i = 0; i < students.length; i++){
             System.out.println(students[i].getFirstName());
